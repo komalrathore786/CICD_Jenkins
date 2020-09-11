@@ -8,7 +8,10 @@
   },
   "jest": {
     "collectCoverage": true,
-    "coverageReporters": ["html"]
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ]
   },
   "keywords": [],
   "author": "",
