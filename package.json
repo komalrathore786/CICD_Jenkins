@@ -10,6 +10,7 @@
     "collectCoverage": true,
     "coverageReporters": [
       "text",
+      "html",
       "cobertura"
     ]
   },
