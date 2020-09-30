@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+   environment
+   {
+       FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
+       git_branch = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
+       git_tag = sh returnStdout: true, script: 'git describe --tags $(git rev-list --tags --max-count=1)'
+       //git_tag="qa-001"
+   }
+    stages {
+        stage('Git SCM') {
+            steps {
+                
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9252c45c-c4e7-4821-ba68-c39a62ebbb2d', url: 'https://github.com/komalrathore786/CICD_Jenkins.git']]])
+                echo "$env.git_tag"
+                echo "$git_branch"
+                echo "$FULL_PATH_BRANCH"
+               
+            }
+        }
+        stage("Branch")
+        {
+             //when { tag "ref/tag/qa-*" }
+            steps{
+               script
+               { 
+                   if ("$env.git_branch".contains("master"))
+                   {
+                      if ("${env.git_tag}".contains("qa"))
+                      {
+                        echo "Found"
+                      }
+                      else
+                      {
+                      echo "Not found"
+                      }
+                  }
+            }
+            }
+        }
+    }
+}
