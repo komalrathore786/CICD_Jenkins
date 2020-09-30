@@ -4,7 +4,7 @@ pipeline {
    {
        FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
        git_branch = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
-       git_tag = sh returnStdout: true, script: 'git tag --sort version:refname | tail -1'
+       git_tag = sh returnStdout: true, script: 'git tag -l --points-at HEAD'
        //git_tag="qa-001"
    }
     stages {
