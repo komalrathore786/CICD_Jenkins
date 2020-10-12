@@ -2,9 +2,9 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "dev-stack"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-f225uaufpiwf"
-s3_prefix = "dev-stack"
+stack_name = "devstack"
+s3_bucket = "devops222"
+s3_prefix = "devstack"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
