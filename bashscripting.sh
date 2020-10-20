@@ -4,9 +4,9 @@
 #Git_Tag="qa-"
 
 
-if [[ $CODEBUILD_GIT_BRANCH == $Branch_Name ]];
-          then
-            echo 'master branch confirm'
+#if [[ $CODEBUILD_GIT_BRANCH == $Branch_Name ]];
+          #then
+           # echo 'master branch confirm'
              if [[ $CODEBUILD_GIT_TAG == $Git_Tag* ]];
              then
                echo 'qa tag is confirmed'
@@ -15,4 +15,4 @@ if [[ $CODEBUILD_GIT_BRANCH == $Branch_Name ]];
              else
                echo "this is dev environment"
              fi
-fi
+#fi
