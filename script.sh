@@ -14,6 +14,9 @@ then
     BUCKET_EXISTS=false 
     echo "creating a bucket"
     aws s3 mb s3://${BUCKET_NAME} --region us-east-1
+    echo "start deploying"
+    echo "start deploying"
+    aws s3 ls "s3://${BUCKET_NAME}"
     aws s3 sync s3://${BUCKET_NAME} 
   else                                                                                                                                                                                                                                        
     echo "Error is checking for S3 Bucket"  	
