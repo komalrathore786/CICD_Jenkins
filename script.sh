@@ -25,5 +25,5 @@ then
   fi 
 else                                                                                                                                                                                                                                         
   echo "Bucket is exists and start for deployment"
-  aws s3 sync s3://${BUCKET_NAME}
+  aws s3 sync s3://feature-api-integration
 fi                      
