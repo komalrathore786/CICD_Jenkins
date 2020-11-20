@@ -24,5 +24,5 @@ then
 else                                                                                                                                                                                                                                         
   echo "Bucket is exists and start for deployment"
   ls
-  aws s3 sync build s3://${BUCKET_NAME}
+  aws s3 cp build/ s3://${BUCKET_NAME}/ --recursive
 fi                      
