@@ -25,5 +25,6 @@ then
   fi 
 else                                                                                                                                                                                                                                         
   echo "Bucket is exists and start for deployment"
+  ls
   aws s3 sync build/ s3://feature-api-integration
 fi                      
