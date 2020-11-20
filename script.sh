@@ -15,8 +15,6 @@ then
     echo "creating a bucket"
     aws s3 mb s3://${BUCKET_NAME} --region us-east-1
     echo "start deploying"
-    echo "start deploying"
-    aws s3 ls "s3://${BUCKET_NAME}"
     aws s3 sync s3://${BUCKET_NAME} 
   else                                                                                                                                                                                                                                        
     echo "Error is checking for S3 Bucket"  	
@@ -26,5 +24,5 @@ then
 else                                                                                                                                                                                                                                         
   echo "Bucket is exists and start for deployment"
   ls
-  aws s3 sync s3://feature-api-integration
+  aws s3 sync build s3://${BUCKET_NAME}
 fi                      
