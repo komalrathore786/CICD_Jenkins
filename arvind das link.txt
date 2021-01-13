@@ -1,3 +1,6 @@
 https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html
 https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html
 https://github.com/aws/serverless-application-model
+
+aws s3 sync s3://cicdtest1234
+
